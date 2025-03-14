@@ -1,0 +1,10 @@
+markdown-to-docx-converter/
+├── main.js                  // Electron main process file
+├── preload.js               // Preload script for secure communication
+├── index.html               // Main UI file
+├── styles.css               // CSS for styling the UI
+├── renderer.js              // Renderer process logic (frontend JavaScript)
+├── package.json             // Project metadata and dependencies
+├── assets/                  // Folder for static assets (e.g., icons)
+│   └── icon.png             // App icon
+└── README.md                // Project documentation

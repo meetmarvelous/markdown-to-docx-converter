@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MD to DOCX</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Markdown to DOCX Converter</h1>
+    <textarea id="md-input" placeholder="Paste Markdown here..."></textarea>
+    <button id="convert-btn">Convert to DOCX</button>
+  </div>
+  <script>
+    const mdInput = document.getElementById("md-input");
+    const convertBtn = document.getElementById("convert-btn");
+
+    convertBtn.addEventListener("click", async () => {
+      if (!mdInput.value.trim()) return alert("Enter Markdown text!");
+
+      convertBtn.disabled = true;
+      convertBtn.textContent = "Converting...";
+
+      const result = await window.electronAPI.convertMdToDocx(mdInput.value);
+
+      if (result.success) {
+        alert(`File saved: ${result.filePath}`);
+      } else {
+        alert(`Error: ${result.error}`);
+      }
+
+      convertBtn.disabled = false;
+      convertBtn.textContent = "Convert to DOCX";
+    });
+  </script>
+</body>
+</html>

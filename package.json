@@ -1,0 +1,12 @@
+{
+  "name": "markdown-to-docx",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "docx": "^8.5.0",
+    "electron": "^25.9.8"
+  }
+}
